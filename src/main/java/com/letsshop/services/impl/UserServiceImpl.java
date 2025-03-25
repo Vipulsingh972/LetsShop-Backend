@@ -56,9 +56,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean loginUser(LoginDTO loginDTO) {
         // Check if the username or email exists in the database
-        Optional<User> userOptional = userRepository.findByUsername(loginDTO.getUsernameOrEmail());
+        Optional<User> userOptional = userRepository.findByEmail(loginDTO.getEmail());
         if (userOptional.isEmpty()) {
-            userOptional = userRepository.findByEmail(loginDTO.getUsernameOrEmail());
+            userOptional = userRepository.findByEmail(loginDTO.getEmail());
         }
 
         if (userOptional.isEmpty()) {
