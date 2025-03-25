@@ -1,4 +1,7 @@
-package com.letsshop.repository;
-
-public interface CartItemRepository {
-}
+//package com.letsshop.repository;
+//
+//import com.letsshop.entities.CartItem;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//
+//public interface CartItemRepository extends JpaRepository<CartItem, Long> {
+//}

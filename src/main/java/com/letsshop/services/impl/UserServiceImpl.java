@@ -24,9 +24,9 @@ public class UserServiceImpl implements UserService {
     public void registerUser(UserDTO userDTO) {
         // Validation checks
         // Check if the username already exists in the database
-        if (userRepository.existsByUsername(userDTO.getUsername())) {
-            throw new IllegalArgumentException("Username already taken.");
-        }
+//        if (userRepository.existsByUsername(userDTO.getUsername())) {
+//            throw new IllegalArgumentException("Username already taken.");
+//        }
 
         // Check if the email already exists in the database
         if (userRepository.existsByEmail(userDTO.getEmail())) {
@@ -40,7 +40,8 @@ public class UserServiceImpl implements UserService {
 
         // Map DTO to Entity
         User user = new User();
-        user.setUsername(userDTO.getUsername());
+        user.setFirstName(userDTO.getFirstName());
+        user.setLastName(userDTO.getLastName());
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));  // Hash the password before saving
         user.setEmail(userDTO.getEmail());
 
